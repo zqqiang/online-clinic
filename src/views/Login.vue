@@ -1,15 +1,14 @@
 <template>
-  <div>Register View</div>
+  <div>Login View</div>
 </template>
 
 <script>
 export default {
-  name: "Register",
+  name: "Login",
   data() {
     return {
-      username: "",
-      email: "",
-      password: ""
+      email: null,
+      password: null
     };
   },
   methods: {
