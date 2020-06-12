@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "clinicRegister",
+  name: "Register",
   data() {
     return {
       username: "",
