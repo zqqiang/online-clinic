@@ -1,13 +1,13 @@
 <template>
-  <div class="home-page">
-    <div class="banner">
+  <section class="hero is-primary">
+    <div class="hero-body">
       <div class="container">
-        <h1 class="logo-font">clinic</h1>
-        <p>Online clinic demo.</p>
+        <h1 class="title">Clinic</h1>
+        <h2 class="subtitle">Online clinic demo</h2>
       </div>
     </div>
     <router-view></router-view>
-  </div>
+  </section>
 </template>
 
 <script>
