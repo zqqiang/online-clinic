@@ -11,53 +11,53 @@
       </div>
       <div class="columns is-mobile is-centered">
         <div class="column is-one-third">
-          <!-- <ul v-if="errors" class="error-messages">
-        <li v-for="(v, k) in errors" :key="k">{{ k }} {{ v | error }}</li>
-          </ul>-->
-          <!-- <form @submit.prevent="onSubmit"> -->
-          <div class="field">
-            <div class="control has-icons-left">
-              <input
-                class="input"
-                type="text"
-                placeholder="Username"
-                v-model="username"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
+          <ul v-if="errors" class="error-messages">
+            <li v-for="(v, k) in errors" :key="k">{{ k }} {{ v | error }}</li>
+          </ul>
+          <form @submit.prevent="onSubmit">
+            <div class="field">
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Username"
+                  v-model="username"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="control has-icons-left">
-              <input
-                class="input"
-                type="email"
-                placeholder="Email"
-                v-model="email"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
+            <div class="field">
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="Email"
+                  v-model="email"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password" />
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field is-grouped is-grouped-right">
-            <p class="control">
-              <a class="button is-primary">Submit</a>
-            </p>
-            <p class="control">
+            <div class="field">
+              <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password" />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field is-grouped is-grouped-right">
+              <p class="control">
+                <button class="button is-primary">Submit</button>
+              </p>
+              <!-- <p class="control">
               <a class="button is-light">Cancel</a>
-            </p>
-          </div>
-          <!-- </form> -->
+              </p>-->
+            </div>
+          </form>
         </div>
       </div>
     </div>
