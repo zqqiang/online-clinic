@@ -11,9 +11,6 @@
       </div>
       <div class="columns is-mobile is-centered">
         <div class="column is-one-third">
-          <ul v-if="errors" class="error-messages">
-            <li v-for="(v, k) in errors" :key="k">{{ k }} {{ v | error }}</li>
-          </ul>
           <form @submit.prevent="onSubmit">
             <div class="field">
               <div class="control has-icons-left">
@@ -27,6 +24,9 @@
                   <i class="fas fa-user"></i>
                 </span>
               </div>
+              <p v-if="errors && errors.username" class="help is-danger">
+                {{ errors.username[0] }}
+              </p>
             </div>
             <div class="field">
               <div class="control has-icons-left">
@@ -40,6 +40,9 @@
                   <i class="fas fa-envelope"></i>
                 </span>
               </div>
+              <p v-if="errors && errors.email" class="help is-danger">
+                {{ errors.email[0] }}
+              </p>
             </div>
             <div class="field">
               <p class="control has-icons-left">
@@ -47,6 +50,9 @@
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
+              </p>
+              <p v-if="errors && errors.password" class="help is-danger">
+                {{ errors.password[0] }}
               </p>
             </div>
             <div class="field is-grouped is-grouped-right">
