@@ -16,9 +16,6 @@ module.exports = {
     disableHostCheck: true
   },
   chainWebpack: config => {
-    config.resolve.alias.set(
-      "bulma",
-      resolve("node_modules/bulma/css/bulma.css")
-    );
+    config.resolve.alias.set("theme", resolve("assets/scss/custom.scss"));
   }
 };

@@ -27,7 +27,7 @@
           </router-link>
         </div>
         <div class="navbar-end">
-          <div class="navbar-item">
+          <div v-if="!isAuthenticated" class="navbar-item">
             <div class="buttons">
               <router-link
                 class="button is-primary"
@@ -43,6 +43,14 @@
               >
             </div>
           </div>
+          <div v-if="isAuthenticated" class="navbar-item">
+            {{ currentUser.username }}
+          </div>
+          <a v-if="isAuthenticated" class="navbar-item" @click="logout">
+            <span class="icon">
+              <i class="fas fa-2x fa-sign-out-alt"></i>
+            </span>
+          </a>
         </div>
       </div>
     </nav>
@@ -50,7 +58,20 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { LOGOUT } from "@/store/actions.type";
+
 export default {
-  name: "Header"
+  name: "Header",
+  computed: {
+    ...mapGetters(["currentUser", "isAuthenticated"])
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch(LOGOUT).then(() => {
+        // this.$router.push({ name: "home" });
+      });
+    }
+  }
 };
 </script>
