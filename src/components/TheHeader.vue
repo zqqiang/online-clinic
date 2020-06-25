@@ -43,9 +43,17 @@
               >
             </div>
           </div>
-          <div v-if="isAuthenticated" class="navbar-item">
+          <router-link
+            v-if="isAuthenticated"
+            class="navbar-item"
+            exact
+            :to="{ name: 'settings' }"
+          >
+            Settings
+          </router-link>
+          <a v-if="isAuthenticated" class="navbar-item">
             {{ currentUser.username }}
-          </div>
+          </a>
           <a v-if="isAuthenticated" class="navbar-item" @click="logout">
             <span class="icon">
               <i class="fas fa-2x fa-sign-out-alt"></i>
