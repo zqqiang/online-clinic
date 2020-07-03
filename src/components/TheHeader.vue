@@ -48,12 +48,18 @@
             class="navbar-item"
             exact
             :to="{ name: 'settings' }"
+            >Settings</router-link
           >
-            Settings
-          </router-link>
-          <a v-if="isAuthenticated" class="navbar-item">
-            {{ currentUser.username }}
-          </a>
+          <router-link
+            v-if="isAuthenticated"
+            class="navbar-item"
+            exact
+            :to="{
+              name: 'profile',
+              params: { username: currentUser.username }
+            }"
+            >{{ currentUser.username }}</router-link
+          >
           <a v-if="isAuthenticated" class="navbar-item" @click="logout">
             <span class="icon">
               <i class="fas fa-2x fa-sign-out-alt"></i>

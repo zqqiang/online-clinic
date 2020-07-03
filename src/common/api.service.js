@@ -22,8 +22,12 @@ const ApiService = {
 
   get(resource, slug = "") {
     return Vue.axios.get(`${resource}/${slug}`).catch(error => {
-      throw new Error(`[RWV] ApiService ${error}`);
+      throw new Error(`ApiService ${error}`);
     });
+  },
+
+  put(resource, params) {
+    return Vue.axios.put(`${resource}`, params);
   }
 };
 
